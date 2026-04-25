@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="106">
+    <author>ABSTAND</author>
+    <title>
+        <en>Slow Steering</en>
+        <de>Langsamere Lenkung</de>
+    </title>
+    <description>
+        <en><![CDATA[
+Realistic speed-dependent steering reduction with smooth transitions and a polished in-game settings GUI.
+
+Layers of realism:
+- Speed-dependent steering reduction (angle, speed and return)
+- Counter-steer extra damping
+- Input deadzone and exponential curve
+- Power-steering effort simulation
+- Optional brake-force scaling
+- Configurable HUD with steering gauge
+
+Hotkeys:
+  Ctrl+S   – toggle mod on/off
+  Shift+S  – open settings GUI
+
+Settings GUI: tabbed (General / Steering / Realism / HUD), live curve preview,
+presets (Arcade / Normal / Realistic / Sim / Custom), mouse + keyboard.
+
+Config file: modsSettings/FS25_SlowSteering/settings.xml
+        ]]></en>
+        <de><![CDATA[
+Realistische, geschwindigkeitsabhaengige Lenkreduktion mit sanften Uebergaengen und einem polierten In-Game-Einstellungsmenue.
+
+Realismus-Schichten:
+- Geschwindigkeitsabhaengige Reduktion (Winkel, Tempo, Rueckstellung)
+- Zusaetzliche Daempfung beim Gegenlenken
+- Eingabe-Totzone und exponentielle Kurve
+- Servolenkungs-Simulation
+- Optional Bremskraft-Skalierung
+- Konfigurierbares HUD mit Lenk-Anzeige
+
+Tasten:
+  Strg+S      - Mod an/aus
+  Umschalt+S  - Einstellungen oeffnen
+
+Einstellungsmenue: Tabs (Allgemein / Lenkung / Realismus / HUD), Live-Kurven-
+Vorschau, Presets (Arcade / Standard / Realistisch / Simulation / Eigen),
+Maus + Tastatur.
+
+Konfiguration: modsSettings/FS25_SlowSteering/settings.xml
+        ]]></de>
+    </description>
+    <version>2.1.0.0</version>
+    <multiplayer supported="true"/>
+    <iconFilename>icon.png</iconFilename>
+
+    <l10n>
+        <text name="input_SlowSteering_Toggle">
+            <en>Slow Steering: On/Off</en>
+            <de>Langsamere Lenkung: An/Aus</de>
+        </text>
+        <text name="input_SlowSteering_Reload">
+            <en>Slow Steering: Settings</en>
+            <de>Langsamere Lenkung: Einstellungen</de>
+        </text>
+    </l10n>
+
+    <extraSourceFiles>
+        <sourceFile filename="register.lua"/>
+    </extraSourceFiles>
+
+    <actions>
+        <action name="SlowSteering_Toggle" category="VEHICLE" ignoreComboMask="false"/>
+        <action name="SlowSteering_Reload" category="VEHICLE" ignoreComboMask="false"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="SlowSteering_Toggle">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_s"/>
+        </actionBinding>
+        <actionBinding action="SlowSteering_Reload">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_s"/>
+        </actionBinding>
+    </inputBinding>
+</modDesc>
