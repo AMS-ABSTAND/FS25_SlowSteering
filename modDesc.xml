@@ -48,7 +48,7 @@ Maus + Tastatur.
 Konfiguration: modsSettings/FS25_SlowSteering/settings.xml
         ]]></de>
     </description>
-    <version>2.1.0.0</version>
+    <version>2.2.0.0</version>
     <multiplayer supported="true"/>
     <iconFilename>icon.png</iconFilename>
 
@@ -64,7 +64,7 @@ Konfiguration: modsSettings/FS25_SlowSteering/settings.xml
     </l10n>
 
     <extraSourceFiles>
-        <sourceFile filename="register.lua"/>
+        <sourceFile filename="src/register.lua"/>
     </extraSourceFiles>
 
     <actions>

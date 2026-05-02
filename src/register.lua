@@ -1,8 +1,8 @@
 -- FS25_SlowSteering – registration
 -- Adds the SlowSteering specialization to all drivable vehicles
 
-source(Utils.getFilename("SlowSteering.lua", g_currentModDirectory))
-source(Utils.getFilename("SlowSteeringGui.lua", g_currentModDirectory))
+source(Utils.getFilename("src/SlowSteering.lua", g_currentModDirectory))
+source(Utils.getFilename("src/SlowSteeringGui.lua", g_currentModDirectory))
 
 SlowSteering.MOD_DIR  = g_currentModDirectory
 SlowSteering.MOD_NAME = g_currentModName
@@ -14,7 +14,7 @@ if g_specializationManager:getSpecializationByName("SlowSteering") == nil then
     g_specializationManager:addSpecialization(
         "SlowSteering",
         "SlowSteering",
-        Utils.getFilename("SlowSteering.lua", g_currentModDirectory),
+        Utils.getFilename("src/SlowSteering.lua", g_currentModDirectory),
         nil
     )
 end
@@ -68,6 +68,8 @@ function SlowSteering_Listener:draw()
     SlowSteeringGui.onDraw()
 end
 
-function SlowSteering_Listener:mouseEvent(posX, posY, isDown, isUp, button) end
+function SlowSteering_Listener:mouseEvent(posX, posY, isDown, isUp, button)
+    SlowSteeringGui.onMouseEvent(posX, posY, isDown, isUp, button)
+end
 
 addModEventListener(SlowSteering_Listener)
